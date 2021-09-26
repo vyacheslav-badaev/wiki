@@ -1,34 +1,46 @@
 <template>
-  <button id="themeSwitch" @click="toggleTheme()" />
+  <button id="themeSwitch" @click="toggleTheme()">
+    <transition name="test">
+      <svg v-if="theme == 'bright'" class="moon" xmlns="http:    </transition>
+    <transition name="test">
+      <svg v-if="theme == 'dark'" class="sun" xmlns="http:    </transition>
+  </button>
 </template>
 <script>
-const sun  = '<svg xmlns="http:const moon = '<svg xmlns="http:export default {
+export default {
+  data() {
+    return {
+      theme: ''
+    }
+  },
   methods: {
-    setTheme: () => {
+    setTheme: function() {
+      let self = this
       const body = document.querySelector('body')
       const themeSwitch = document.querySelector('#themeSwitch')
       if (process.isClient && localStorage.getItem('theme') === null) {
         localStorage.setItem('theme', 'bright')
+        self.theme = 'bright'
       } 
       if (process.isClient) {
         body.classList.add(localStorage.getItem('theme'))
-        themeSwitch.innerHTML = (localStorage.getItem('theme') == 'bright' ? moon : sun )
+        self.theme = localStorage.getItem('theme')
       }
     },
-    toggleTheme: () => {
+    toggleTheme: function() {
+      let self = this
       const body = document.querySelector('body')
-      const themeSwitch = document.querySelector('#themeSwitch')
       if (process.isClient) {
         if (body.classList.contains('dark')) {
           localStorage.setItem('theme', 'bright');
           body.classList.remove('dark')
           body.classList.add('bright')
-          themeSwitch.innerHTML = moon
+          self.theme = 'bright'
         } else {
           localStorage.setItem('theme', 'dark');
           body.classList.remove('bright')
           body.classList.add('dark')
-          themeSwitch.innerHTML = sun
+          self.theme = 'dark'
         }
       }
     }
@@ -45,6 +57,9 @@ button {
   padding: 0;
   transition: color .15s ease-in-out;
   cursor: pointer;
+  width: 48px;
+  height: 48px;
+  position: relative;
   &:focus {
     outline: none;
   }
@@ -54,5 +69,17 @@ button {
   .bright & {
     color: $textBright;
   }
+}
+svg {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+.test-enter-active, .test-leave-active {
+  transition: transform .25s ease-in-out, opacity .25s ease-in-out;
+}
+.test-enter, .test-leave-to  {
+  transform: translateY(20px) scale(.5);
+  opacity: 0;
 }
 </style>
