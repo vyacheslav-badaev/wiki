@@ -5,4 +5,8 @@ import("prismjs/themes/prism-okaidia.css")
 export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
   head.htmlAttrs = { lang: 'en' }
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https:
+  })
 }

@@ -1,8 +1,8 @@
 <template>
   <button id="themeSwitch" @click="toggleTheme()">
-    <transition name="test">
+    <transition name="theme">
       <svg v-if="theme == 'bright'" class="moon" xmlns="http:    </transition>
-    <transition name="test">
+    <transition name="theme">
       <svg v-if="theme == 'dark'" class="sun" xmlns="http:    </transition>
   </button>
 </template>
@@ -75,10 +75,10 @@ svg {
   top: 12px;
   left: 12px;
 }
-.test-enter-active, .test-leave-active {
+.theme-enter-active, .theme-leave-active {
   transition: transform .25s ease-in-out, opacity .25s ease-in-out;
 }
-.test-enter, .test-leave-to  {
+.theme-enter, .theme-leave-to  {
   transform: translateY(20px) scale(.5);
   opacity: 0;
 }
