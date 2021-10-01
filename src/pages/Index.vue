@@ -6,7 +6,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'The ultimate staic generated documentation theme for the JAM-stack'
   }
 }
 </script>
