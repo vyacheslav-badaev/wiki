@@ -118,7 +118,7 @@ a {
   opacity: .8;
   &::after {
     content: '';
-    transition: opacity .25s ease-in-out;
+    transition: opacity .15s ease-in-out;
     width: 6px;
     height: 6px;
     background: $brandPrimary;
