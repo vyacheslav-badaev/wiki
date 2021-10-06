@@ -1,11 +1,11 @@
 <template>
   <button @click="toggleSidebar()" class="toggle">
     <transition name="toggle">
-      <svg v-if="!this.$store.state.sidebarOpen" class="open" xmlns="http:        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12L21 12M3 6L21 6M3 18L21 18"/>
+      <svg v-show="!this.$store.state.sidebarOpen" class="open" xmlns="http:        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12L21 12M3 6L21 6M3 18L21 18"/>
       </svg>
     </transition>
     <transition name="toggle">
-      <svg v-if="this.$store.state.sidebarOpen" class="close" xmlns="http:        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6L18 18"/>
+      <svg v-show="this.$store.state.sidebarOpen" class="close" xmlns="http:        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6L18 18"/>
       </svg>
     </transition>
   </button>
@@ -14,7 +14,9 @@
 export default {
   methods: {
     toggleSidebar: function() {
-      this.$store.commit('toggleSidebar')
+      if (process.isClient) {
+        this.$store.commit('toggleSidebar')
+      }
     }
   }
 }
