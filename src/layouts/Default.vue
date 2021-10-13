@@ -44,7 +44,7 @@ export default {
     handleScroll: function() {
       let mainNavLinks = document.querySelectorAll('.topic.active + ul .sub-topic')
       let fromTop = window.scrollY
-      if ((fromTop > 0 && this.pageScrolled == false) || (fromTop == 0 && this.pageScrolled == true)) {
+      if ((fromTop > 10 && this.pageScrolled == false) || (fromTop =< 10 && this.pageScrolled == true)) {
         this.pageScrolled = !this.pageScrolled
       }
       mainNavLinks.forEach(link => {
