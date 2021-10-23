@@ -48,10 +48,22 @@ query Menu {
 <script>
 import throttle from 'lodash/throttle'
 export default {
+  watch: {
+    '$route' () {
+      this.$store.commit('closeSidebar')
+    }
+  },
   methods: {
     checkAnchors(slug, item) {
       if (slug == item) {
         return true
+      }
+    },
+    stateFromSize: function() {
+      if (window.getComputedStyle(document.body, ':before').content == '"small"') {
+        this.$store.commit('closeSidebar')
+      } else {
+        this.$store.commit('openSidebar')
       }
     },
     sidebarScroll: function() {
@@ -70,6 +82,9 @@ export default {
         }
       })
     }
+  },
+  beforeMount () {
+    this.stateFromSize()
   },
   mounted() {
     window.addEventListener('scroll', throttle(this.sidebarScroll, 50))
