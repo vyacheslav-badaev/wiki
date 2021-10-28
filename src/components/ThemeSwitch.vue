@@ -1,5 +1,5 @@
 <template>
-  <button id="themeSwitch" @click="toggleTheme()">
+  <button id="themeSwitch" @click="toggleTheme()" aria-label="Switch theme between light and dark">
     <transition name="theme">
       <svg v-if="theme == 'bright'" class="moon" xmlns="http:    </transition>
     <transition name="theme">

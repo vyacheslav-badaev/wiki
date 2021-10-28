@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggleSidebar()" class="toggle">
+  <button @click="toggleSidebar()" class="toggle" aria-label="Toggle the sidebar">
     <transition name="toggle">
       <svg v-show="!this.$store.state.sidebarOpen" class="open" xmlns="http:        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12L21 12M3 6L21 6M3 18L21 18"/>
       </svg>
