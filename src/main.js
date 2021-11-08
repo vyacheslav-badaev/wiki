@@ -11,6 +11,18 @@ export default function (Vue, { router, head, isClient, appOptions }) {
     rel: 'stylesheet',
     href: 'https:
   })
+  head.link.push({
+    rel: 'manifest',
+    href: '/manifest.json'
+  })
+  head.meta.push({
+    name: 'theme-color',
+    content: '#10c186'
+  })
+  head.meta.push({
+    name: 'apple-mobile-web-app-status-bar-style',
+    content: 'default'
+  })
   appOptions.store = new Vuex.Store({
     state: {
       sidebarOpen: false
