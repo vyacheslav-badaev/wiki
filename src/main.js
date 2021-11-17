@@ -3,14 +3,11 @@ import '~/assets/scss/globals.scss'
 import 'prismjs/themes/prism.css'
 import("prismjs/themes/prism-okaidia.css")
 import Vuex from 'vuex'
+require('typeface-source-sans-pro')
 export default function (Vue, { router, head, isClient, appOptions }) {
   Vue.use(Vuex)
   Vue.component('Layout', DefaultLayout)
   head.htmlAttrs = { lang: 'en' }
-  head.link.push({
-    rel: 'stylesheet',
-    href: 'https:
-  })
   head.link.push({
     rel: 'manifest',
     href: '/manifest.json'
