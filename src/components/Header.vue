@@ -8,7 +8,7 @@
     </g-link>
     <nav class="nav">
       <ThemeSwitch />
-      <MenuToggle />
+      <MenuToggle v-if="menuToggle" />
     </nav>
   </header>
 </template>
@@ -20,6 +20,12 @@ export default {
   components: {
     ThemeSwitch,
     MenuToggle
+  },
+  props: {
+    menuToggle: {
+      type: Boolean,
+      default: true
+    }
   },
   data() {
     return {
@@ -74,6 +80,7 @@ export default {
   height: 40px;
   display: block;
   transition: color .15s ease-in-out;
+  color: $textBright;
   svg {
     height: 100%;
     width: auto;

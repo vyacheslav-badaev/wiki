@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Header />
-    <Sidebar />
-    <main class="main">
+    <Header :menuToggle="sidebar" />
+    <Sidebar v-if="sidebar" />
+    <main class="main" :class="{'main--has-sidebar': !sidebar, 'main--sidebar-is-open' : this.$store.state.sidebarOpen}">
       <slot/>
     </main>
   </div>
@@ -22,6 +22,12 @@ export default {
     Header,
     Sidebar
   },
+  props: {
+    sidebar: {
+      type: Boolean,
+      default: true
+    }
+  },
   mounted() {
     this.$store.commit('closeSidebar')
     if (process.isClient) {
@@ -38,7 +44,7 @@ export default {
 .main {
   padding: 140px 30px 30px 30px;
   max-width: 1200px;
-  transition: padding .15s ease-in-out;
+  transition: transform .15s ease-in-out;
   @include respond-above(sm) {
     padding: 100px 30px 30px;
     transform: translateX(300px);
@@ -46,6 +52,13 @@ export default {
   }
   @include respond-above(md) {
     padding: 100px 80px 30px;
+  }
+  &--has-sidebar {
+    transform: translate(0);
+    margin: 0 auto;
+  }
+  &--sidebar-is-open {
+    transform: translate(300px);
   }
 }
 </style>
