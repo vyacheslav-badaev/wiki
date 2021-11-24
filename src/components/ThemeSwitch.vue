@@ -1,13 +1,20 @@
 <template>
   <button id="themeSwitch" @click="toggleTheme()" aria-label="Switch theme between light and dark">
     <transition name="theme">
-      <svg v-if="theme == 'bright'" class="moon" xmlns="http:    </transition>
+      <moon-icon v-if="theme == 'bright'" class="moon" />
+    </transition>
     <transition name="theme">
-      <svg v-if="theme == 'dark'" class="sun" xmlns="http:    </transition>
+      <sun-icon v-if="theme == 'dark'" class="sun" />
+    </transition>
   </button>
 </template>
 <script>
+import { MoonIcon, SunIcon } from 'vue-feather-icons'
 export default {
+  components: {
+    MoonIcon,
+    SunIcon
+  },
   data() {
     return {
       theme: ''
