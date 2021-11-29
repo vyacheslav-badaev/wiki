@@ -23,6 +23,12 @@ module.exports = {
           ]
         }
       }
+    },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: process.env.GA_ID
+      }
     }
   ],
   chainWebpack: config => {
