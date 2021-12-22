@@ -16,6 +16,7 @@
             </ul>
           </li>
         </ul>
+        <GitLink class="git" />
       </nav>
     </aside>
 </template>
@@ -46,8 +47,12 @@ query Menu {
 }
 </static-query>
 <script>
+import GitLink from '~/components/GitLink.vue'
 import throttle from 'lodash/throttle'
 export default {
+  components: {
+    GitLink
+  },
   watch: {
     '$route' () {
       this.$store.commit('closeSidebar')
@@ -104,6 +109,7 @@ export default {
   will-change: transform;
   transform: translateX(-300px);
   border-right: 1px solid transparent;
+  overflow: auto;
   @include respond-above(sm) {
     transform: translateX(0);
   }
@@ -118,6 +124,12 @@ export default {
     background: $sidebarDark;
     border-color: shade($sidebarDark, 40%);
   }
+}
+nav {
+  position: relative;
+  min-height: 100%;
+  border: 1px solid transparent;
+  padding-bottom: 40px;
 }
 ul {
   list-style: none;
@@ -169,5 +181,10 @@ a {
       opacity: 1;
     }
   }
+}
+.git {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 </style>
