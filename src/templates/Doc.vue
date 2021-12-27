@@ -13,7 +13,6 @@ query Doc ($path: String!) {
     path
     date (format: "D. MMMM YYYY")
     timeToRead
-    description
     content
   }
 }

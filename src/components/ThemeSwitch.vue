@@ -50,6 +50,7 @@ export default {
           self.theme = 'dark'
         }
       }
+      this.$emit('theme-change')
     }
   },
   mounted () {
