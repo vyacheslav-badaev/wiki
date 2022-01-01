@@ -13,16 +13,16 @@
       <article>
         <h2>
           <g-link to="/theme-configuration">
-            <eye-icon />
-            Setup
+            <sliders-icon />
+            Configuration
           </g-link>
         </h2>
       </article>
       <article>
         <h2>
-          <g-link to="/theme-configuration">
-            <upload-cloud-icon />
-            Deployment
+          <g-link to="/theme-configuration#changing-colors">
+            <eye-icon />
+            Change colors
           </g-link>
         </h2>
       </article>
@@ -30,12 +30,12 @@
   </Layout>
 </template>
 <script>
-import { PlayIcon, EyeIcon, UploadCloudIcon } from 'vue-feather-icons'
+import { PlayIcon, SlidersIcon, EyeIcon } from 'vue-feather-icons'
 export default {
     components: {
     PlayIcon,
-    EyeIcon,
-    UploadCloudIcon
+    SlidersIcon,
+    EyeIcon
   },
   metaInfo: {
     title: 'The ultimate staic generated documentation theme for the JAM-stack',
