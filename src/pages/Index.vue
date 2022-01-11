@@ -1,38 +1,43 @@
 <template>
   <Layout :sidebar="false">
-    <h1>Jamdocs - the ultimate staic generated documentation theme for the JAM-stack</h1>
-    <nav>
-      <article>
-        <h2>
-          <g-link to="/getting-started">
-            <play-icon />
-            Introduction
-          </g-link>
-        </h2>
-      </article>
-      <article>
-        <h2>
-          <g-link to="/theme-configuration">
-            <sliders-icon />
-            Configuration
-          </g-link>
-        </h2>
-      </article>
-      <article>
-        <h2>
-          <g-link to="/theme-configuration#changing-colors">
-            <eye-icon />
-            Change colors
-          </g-link>
-        </h2>
-      </article>
-    </nav>
+    <div class="content">
+      <h1>Jamdocs - the ultimate static generated documentation theme for the JAM-stack</h1>
+      <nav>
+        <article>
+          <h2>
+            <g-link to="/getting-started">
+              <play-icon />
+              Introduction
+            </g-link>
+          </h2>
+        </article>
+        <article>
+          <h2>
+            <g-link to="/theme-configuration">
+              <sliders-icon />
+              Configuration
+            </g-link>
+          </h2>
+        </article>
+        <article>
+          <h2>
+            <g-link to="/theme-configuration#changing-colors">
+              <eye-icon />
+              Change colors
+            </g-link>
+          </h2>
+        </article>
+      </nav>
+      <GitLink class="git" size="large" />
+    </div>
   </Layout>
 </template>
 <script>
+import GitLink from '~/components/GitLink.vue'
 import { PlayIcon, SlidersIcon, EyeIcon } from 'vue-feather-icons'
 export default {
     components: {
+    GitLink,
     PlayIcon,
     SlidersIcon,
     EyeIcon
@@ -46,6 +51,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.content {
+  display: flex;
+  flex-direction: column;
+}
 h1 {
   text-align: center;
   max-width: 600px;
@@ -97,6 +106,13 @@ svg {
   @include respond-above(md) {
     width: 3em;
     height: 3em;
+  }
+}
+.git {
+  margin: 3em 0 0;
+  align-self: center;
+  @include respond-above(md) {
+    margin: 5em 0 0;
   }
 }
 </style>
