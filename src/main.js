@@ -15,6 +15,10 @@ export default function (Vue, { router, head, isClient, appOptions }) {
     content: '#10c186'
   })
   head.meta.push({
+    name: 'google-site-verification',
+    content: process.env.GSV_META
+  })
+  head.meta.push({
     name: 'apple-mobile-web-app-status-bar-style',
     content: 'default'
   })
