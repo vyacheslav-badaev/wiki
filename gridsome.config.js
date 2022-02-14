@@ -11,13 +11,15 @@ function addStyleResource (rule) {
 module.exports = {
   siteName: 'Jamdocs',
   siteUrl: 'https:
+  templates: {
+    Doc: '/:slug',
+  },
   plugins: [
     {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'docs*.md',
         typeName: 'Doc',
-        route: '/:slug',
         remark: {
           plugins: [
             '@gridsome/remark-prismjs'
