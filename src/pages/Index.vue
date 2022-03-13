@@ -15,7 +15,7 @@
 import GitLink from '~/components/GitLink.vue'
 import Shortcut from '~/components/Shortcut.vue'
 export default {
-    components: {
+  components: {
     GitLink,
     Shortcut
   },
