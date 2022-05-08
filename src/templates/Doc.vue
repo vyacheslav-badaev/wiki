@@ -40,10 +40,10 @@ export default {
     font-size: 2rem;
   }
 }
+/deep/ > p > img {
+    max-width: 100%;
+  }
 .markdown {
   padding-bottom: 50vh;
-}
-img {
-  max-width: 100%;
 }
 </style>
