@@ -4,9 +4,9 @@ date: 2020-01-02
 slug: forestry-cms
 ---
 ## Import starter
-[https://github.com/forestryio/jamdocs](https://github.com/forestryio/jamdocs "https://github.com/forestryio/jamdocs")
+[!](https://app.forestry.io/quick-start?repo=forestryio/jamdocs&engine=other "Import to Forestry")
 ## Start Instant Previews
-This starter is pre-configured, but you will need to manually start the preview environement if you want to be able to preview your documents.
+This starter is pre-configured, but you will need to manually start the preview environement if you want to be able to preview your website.
 Go to **Settings / Preview** and click on the **Start** button.
 It will clone your site on Forestry preview environment, install the project dependencies, and launch your npm script to launch `gridsome develop`
 !
@@ -17,5 +17,5 @@ Go in the docs section and click **Create** to add a new page to your documentat
 You can edit the **Documention Page** front matter template by cliking on **Front Matter** in the sidebar. From here you can add new fields to enhance the current template.
 !
 ## Managing sidebar topics
-Click on the **Menu** section in Forestry to add a new section or topics from the user interface. Forestry will write the changes to the JSON file. 🎉 
+Click on the **Menu** section in Forestry to add a new section or topics from the user interface. Forestry will write the changes to the JSON file. 🎉
 !
